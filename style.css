@@ -1,0 +1,73 @@
+:root{--ink:#1a1a1a; --orange:#ff8a3d; --sky:#87ceeb; --cream:#fffaf3; --sand:#f6ebdc}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; font:400 16px/1.7 "DM Sans",system-ui,sans-serif; color:var(--ink); background:var(--cream)}
+h1,h2{font-family:"DM Serif Display",Georgia,serif; font-weight:400; line-height:1.1; margin:0}
+h3{margin:0 0 6px; font-size:19px}
+p{margin:0 0 12px}
+a{color:#d9601a}
+:focus-visible{outline:3px solid var(--sky); outline-offset:3px}
+
+/* sidebar */
+.side{position:fixed; inset:0 auto 0 0; width:230px; background:var(--ink); color:#fff; padding:32px 22px; border-right:6px solid var(--orange); z-index:10}
+.logo{width:72px; height:72px; border-radius:50%; background:var(--orange); color:var(--ink); display:grid; place-items:center; font:700 24px "DM Serif Display",serif; box-shadow:5px 5px 0 var(--sky)}
+.side-name{font-size:26px; margin:16px 0 2px}
+.side-role{color:var(--sky); font-style:italic; margin-bottom:28px}
+#nav a{display:block; color:#e8e8e8; text-decoration:none; padding:9px 12px; border-radius:4px; margin-bottom:4px; font-weight:500}
+#nav a b{color:var(--orange); font-size:12px; margin-right:12px}
+#nav a:hover{background:#2c2c2c}
+#nav a.on{background:var(--orange); color:var(--ink)}
+#nav a.on b{color:var(--ink)}
+
+/* layout */
+main{margin-left:230px}
+section{padding:80px 56px 40px; max-width:1100px}
+.hero{min-height:100vh; display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center}
+.eyebrow{color:#c4511a; font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:13px; margin-bottom:8px}
+h1{font-size:clamp(38px,5vw,64px)}
+h2{font-size:clamp(32px,4vw,46px); margin-bottom:28px}
+.mark{background:linear-gradient(transparent 62%,var(--orange) 62% 92%,transparent 92%)}
+.lead{font-size:18px; max-width:46ch; margin:18px 0 26px; color:#444}
+
+/* cards */
+.card{background:#fff; border:3px solid var(--ink); border-radius:8px; box-shadow:7px 7px 0 var(--ink); margin:0}
+.pad{padding:24px}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:26px}
+.two{display:grid; grid-template-columns:1.4fr 1fr; gap:28px; align-items:start}
+.photo{overflow:hidden; transform:rotate(2deg); box-shadow:10px 10px 0 var(--sky)}
+.photo img{display:block; width:100%; aspect-ratio:4/5; object-fit:cover}
+
+/* buttons, chips */
+.btn{display:inline-block; background:var(--orange); color:var(--ink); text-decoration:none; font-weight:700; padding:12px 22px; border:3px solid var(--ink); border-radius:6px; box-shadow:4px 4px 0 var(--ink); margin:0 10px 10px 0}
+.btn.alt{background:var(--sky)}
+.btn:hover{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink)}
+.chips{display:flex; gap:12px; margin:10px 0}
+.swatch{width:54px; height:54px; border:3px solid var(--ink); border-radius:50%; box-shadow:3px 3px 0 var(--ink)}
+.small{font-size:14px; color:#555}
+.tags{display:flex; flex-wrap:wrap; gap:14px; padding:0; margin:0; list-style:none}
+.tags li{background:#fff; border:3px solid var(--ink); border-radius:999px; padding:6px 18px; box-shadow:4px 4px 0 var(--sky); font-weight:500}
+
+/* certificates, pets */
+.certs{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:26px}
+.certs img,.pets img{display:block; width:100%; background:var(--sand)}
+.certs img{aspect-ratio:4/3; object-fit:contain}
+figcaption{padding:10px 14px; font-weight:700; border-top:3px solid var(--ink); font-size:15px}
+.pets{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+.pets img{aspect-ratio:1/1; object-fit:cover}
+.contact p{margin-bottom:18px}
+.foot{margin-top:48px; color:#666; font-size:14px}
+
+/* phone */
+@media (max-width:860px){
+  .side{position:sticky; inset:0 0 auto 0; width:100%; height:auto; padding:10px 14px; border-right:0; border-bottom:5px solid var(--orange); display:flex; align-items:center; gap:12px}
+  .logo{width:42px; height:42px; font-size:16px; flex:none; box-shadow:3px 3px 0 var(--sky)}
+  .side-name,.side-role{display:none}
+  #nav{display:flex; overflow-x:auto; gap:4px; white-space:nowrap}
+  #nav a{margin:0; padding:8px 12px}
+  #nav a b{display:none}
+  main{margin-left:0}
+  section{padding:56px 20px 24px}
+  .hero{grid-template-columns:1fr; min-height:0; gap:32px}
+  .photo{max-width:340px}
+  .two{grid-template-columns:1fr}
+}
